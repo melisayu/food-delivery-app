@@ -7,7 +7,7 @@ This is a food delivery mobile app using React Native
 npm install
 ```
 
-### Project start
+## Project start
 ```
 npm start
 ```
