@@ -2,6 +2,7 @@ import React from 'react';;
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
+import BottomTabsNavigator from './components/BottomTabsNavigator';
 import GetStarted from './screens/GetStarted';
 import HomeScreen from './screens/HomeScreen';
 
@@ -15,6 +16,7 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="BottomTabsNavigator" component={BottomTabsNavigator} />
         <Stack.Screen name="GetStarted" component={GetStarted} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
