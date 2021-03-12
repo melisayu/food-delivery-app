@@ -12,13 +12,13 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName={GetStarted}
         screenOptions={{
           headerShown: false,
         }}
       >
         <Stack.Screen name="BottomTabsNavigator" component={BottomTabsNavigator} />
         <Stack.Screen name="GetStarted" component={GetStarted} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

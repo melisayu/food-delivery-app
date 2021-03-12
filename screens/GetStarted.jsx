@@ -14,7 +14,7 @@ function GetStarted({ navigation }) {
       <Text style={styles.mainText}>Food for Everyone</Text>
       <Image source={require('../assets/face1.png')} style={styles.face1} resizeMode="contain" />
       <Image source={require('../assets/face2.png')} style={styles.face2} resizeMode="contain" />
-      <AppButton title="Get started" press={() => navigation.push('HomeScreen')}></AppButton>
+      <AppButton title="Get started" press={() => navigation.push('BottomTabsNavigator')}></AppButton>
       <StatusBar style="auto" />
     </View>
   );
