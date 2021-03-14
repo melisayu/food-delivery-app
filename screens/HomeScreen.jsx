@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+
+import ItemCard from '../components/ItemCard';
 
 function HomeScreen() {
   let [foods, setFoods] = useState([]);
@@ -15,12 +17,13 @@ function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.homeTitle}>Delicious foods for you</Text>
-      {foods.length > 0 && foods.map((food) => (
-        <Text key={food.is}>
-          {food.name}
-          {food.description}
-        </Text>
-      ))}
+      <ScrollView horizontal>
+        {foods.length > 0 && foods.map((food) => (
+          <ItemCard
+            item={food}
+          />
+        ))}
+      </ScrollView>
     </View>
   )
 }
@@ -31,6 +34,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  homeTitle: {
+    fontSize: 34,
+    fontWeight: '700',
+  }
 })
 
 export default HomeScreen;
