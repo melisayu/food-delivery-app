@@ -1,10 +1,13 @@
 import React from 'react';;
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import CreateServer from './server';
 
 import BottomTabsNavigator from './components/BottomTabsNavigator';
 import GetStarted from './screens/GetStarted';
-import HomeScreen from './screens/HomeScreen';
+
+
+CreateServer();
 
 const Stack = createStackNavigator();
 

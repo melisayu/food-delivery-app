@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import AppButton from '../components/AppButton';
+function HomeScreen() {
+  let [foods, setFoods] = useState([]);
 
-function HomeScreen({ navigation, route }) {
+  useEffect(() => {
+    if (foods) {
+      fetch('/api/foods')
+        .then((res) => res.json())
+        .then((json) => setFoods(json.foods))
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.homeTitle}>Delicious foods for you</Text>
+      {foods.length > 0 && foods.map((food) => (
+        <Text key={food.is}>
+          {food.name}
+          {food.description}
+        </Text>
+      ))}
     </View>
   )
 }
