@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, ScrollView, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
 
 import ItemCard from '../components/ItemCard';
 
@@ -17,7 +18,10 @@ function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.homeTitle}>Delicious foods for you</Text>
-      <TextInput placeholder="Search" style={styles.textInput} />
+      <View style={styles.searchView}>
+        <Icon name="magnifying-glass" style={styles.searchIcon} size={25} />
+        <TextInput placeholder="Search" style={styles.textInput} /> 
+      </View>
       <ScrollView horizontal style={styles.itemsContainer}>
         {foods.length > 0 && foods.map((food) => (
           <ItemCard
@@ -36,19 +40,29 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 50,
   },
+  searchView: {
+    backgroundColor: '#EFEEEE',
+    borderRadius: 30,
+    marginBottom: 46,
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  searchIcon: {
+    padding: 15,
+    alignItems: 'center',
+  },
+  textInput: {
+    fontSize: 17,
+    width: '100%',
+    flex: 1,
+    padding: 14,
+  },
   homeTitle: {
     fontSize: 34,
     fontWeight: '700',
     marginBottom: 28,
-  },
-  textInput: {
-    backgroundColor: '#EFEEEE',
-    borderRadius: 30,
-    fontSize: 17,
-    width: '100%',
-    height: 60,
-    padding: 16,
-    marginBottom: 46,
   },
   itemsContainer: {
     width: '110%',
