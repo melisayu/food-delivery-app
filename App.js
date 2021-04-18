@@ -15,7 +15,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={GetStarted}
+        initialRouteName={BottomTabsNavigator}
         screenOptions={{
           headerShown: false,
         }}

@@ -28,7 +28,6 @@ function BottomTabs({ state, descriptors, navigation }) {
             name="heart"
             backgroundColor="#fff"
             color="#FA4A0C"
-            onPress={console.log('go to favorite page')}
             style={styles.icon}
           >
             <Text>{routeName}</Text>
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   icon: {
-    flexDirection: 'column'
+    flexDirection: 'column',
   }
 })
 

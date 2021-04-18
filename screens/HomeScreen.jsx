@@ -25,6 +25,7 @@ function HomeScreen() {
       <ScrollView horizontal style={styles.itemsContainer}>
         {foods.length > 0 && foods.map((food) => (
           <ItemCard
+            key={food.id}
             item={food}
           />
         ))}
@@ -37,8 +38,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 50,
+    marginHorizontal: 30,
+    marginVertical: 50,
   },
   searchView: {
     backgroundColor: '#EFEEEE',

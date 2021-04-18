@@ -7,7 +7,7 @@ function ItemCard(props) {
   return (
     <View style={styles.container}>
       {item && (
-        <View key={item.id}>
+        <View>
           <Text style={styles.title}>{item.name}</Text>
           <Text style={styles.sub}>{item.price}</Text>
         </View>
